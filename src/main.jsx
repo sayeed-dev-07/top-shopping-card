@@ -6,29 +6,36 @@ import { RouterProvider, createBrowserRouter } from 'react-router'
 import Shop from './components/Shop.jsx'
 import Cart from './components/Cart.jsx'
 import Home from './components/Home.jsx'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import Error from './components/Error.jsx'
 
+const queryClient = new QueryClient()
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    children:[{
+    errorElement:<Error/>,
+    
+    children: [{
       index: true,
-      element: <Home/>
+      element: <Home />,
     },
     {
       path: 'shop',
-      element: <Shop/>
+      element: <Shop />
     },
     {
       path: 'cart',
-      element: <Cart/>
+      element: <Cart />
     }
-  ]
+    ]
   }
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </StrictMode>,
 )
