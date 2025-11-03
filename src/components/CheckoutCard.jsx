@@ -38,7 +38,7 @@ const CheckoutCard = ({ obj, setTotalItems, setTotal, setCartArr, cartArr }) => 
   }
 
   return (
-    <div className="p-4 bg-[#b8afaf] rounded-xl flex items-center gap-6 shadow-md font-outfit">
+    <div className="p-4 bg-[#b8afaf] rounded-xl flex items-center gap-6 shadow-md font-outfit card-appear">
       <img
         src={obj.image}
         alt={obj.title}

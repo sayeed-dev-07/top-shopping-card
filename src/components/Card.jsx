@@ -36,7 +36,7 @@ const Card = ({ obj, setTotal, setTotalItems, cartArr, setCartArr }) => {
         <p>⭐ Rating : {obj.rating.rate}</p>
         <p>💳 Price : {obj.price}$</p>
 
-        <div className='flex items-center gap-3 justify-center py-3'>
+        <div className='flex items-center  gap-3 justify-center py-3'>
           <div
             onClick={() => setItemsCount(prev => (prev > 1 ? prev - 1 : prev))}
             className='p-3 cursor-pointer rounded-md bg-black text-white'

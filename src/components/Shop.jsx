@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import Card from './Card';
 import { useOutletContext } from 'react-router';
+import Loader from './Loader';
 
 const Shop = () => {
     const {setTotal, setTotalItems, setCartArr, cartArr} = useOutletContext();
@@ -17,8 +18,8 @@ const Shop = () => {
     })
 
     if (isLoading) {
-        return <div className='w-full h-full flex items-center justify-center text-3xl font-outfit'>
-            <p>Data is loading ....</p>
+        return <div className='flex items-center justify-center'>
+            <Loader/>
         </div>
     }
     if (isError) {
