@@ -5,7 +5,7 @@ const Home = () => {
     
     return (
 
-        <div className="h-[90vh] font-outfit bg-[url('./body.png')] bg-center bg-cover">
+        <div className="h-[90vh] font-outfit bg-[url('/body.png')] bg-center bg-cover">
             <div className='w-full h-full bg-[#000000b8] flex items-center justify-center'>
                 <div className='sm:w-[70vw] w-full px-2 lg:w-[50vw] flex flex-col items-center justify-center gap-y-12 text-center card-appear'>
                     <p className='text-2xl sm:text-3xl md:text-5xl text-white '><span className='text-[crimson] font-semibold md:leading-22'>Nuvéa</span> — where timeless design meets effortless elegance. Curated clothing for the modern soul.</p>
