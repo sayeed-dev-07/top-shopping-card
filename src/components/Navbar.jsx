@@ -2,7 +2,6 @@ import { ShoppingCart } from 'lucide-react';
 import { React, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 import CartComp from './CartComp';
-import { useOutletContext } from 'react-router';
 
 const Navbar = ({totalItemsCount}) => {
     const [burgerOn, setBurgerOn] = useState(false);

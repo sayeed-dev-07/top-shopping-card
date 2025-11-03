@@ -4,7 +4,7 @@ import Card from './Card';
 import { useOutletContext } from 'react-router';
 
 const Shop = () => {
-    const {itemsCount, setItemsCount, setTotalItemsCount, cartArr, setCartArr} = useOutletContext();
+    const {setTotal, setTotalItems, setCartArr, cartArr} = useOutletContext();
 
     const {data, isLoading, isError, error} = useQuery({
         queryKey : ['shopData'],
@@ -29,7 +29,7 @@ const Shop = () => {
     return (
         <div className='grid grid-cols-1 gap-y-3 gap-x-5 sm:grid-cols-[repeat(auto-fit,minmax(350px,1fr))] py-[5%] justify-center items-start bg-[#292525] px-2 md:px-[10%] sm:px-[5%]'>
            { data.map(elem => (
-            <Card key={elem.id} itemsCount={itemsCount} setItemsCount={setItemsCount} setTotalItemsCount={setTotalItemsCount} obj={elem} cartArr={cartArr} setCartArr={setCartArr}/>
+            <Card key={elem.id} obj={elem} setTotal={setTotal} setTotalItems={setTotalItems} setCartArr={setCartArr} cartArr={cartArr}/>
         ))}
         </div>
     )
