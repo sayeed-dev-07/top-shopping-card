@@ -1,18 +1,8 @@
-import { Minus, Plus, RatIcon } from 'lucide-react';
-import React, { useState } from 'react';
+import React from 'react';
 
-const Card = ({ obj, setTotalItemsCount, cartArr, setCartArr, itemsCount2 = 1}) => {
-    const [itemsCount, setItemsCount] = useState(itemsCount2);
-    function clickHandle(obj){
-        if (!cartArr.some(item => item.id == obj.id)) {
-            obj.itemsCount = itemsCount;
-            setCartArr([...cartArr, obj])
-            setTotalItemsCount(prev=> prev + itemsCount)
-        }
-    }
-
+const CheckoutCard = ({obj}) => {
     return (
-        <div className='bg-white rounded-xl card-appear shadow-2xl font-outfit '>
+        <div className='bg-white rounded-xl card-appear flex shadow-2xl font-outfit '>
             <div className='overflow-hidden rounded-tl-xl flex bg-[#6b6060b4] items-center justify-center rounded-tr-xl h-[300px]'>
                 <img className='w-[150px]' src={obj.image}  alt="" />
             </div>
@@ -35,4 +25,4 @@ const Card = ({ obj, setTotalItemsCount, cartArr, setCartArr, itemsCount2 = 1}) 
     );
 };
 
-export default Card;
+export default CheckoutCard;

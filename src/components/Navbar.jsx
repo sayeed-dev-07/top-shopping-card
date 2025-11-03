@@ -2,9 +2,11 @@ import { ShoppingCart } from 'lucide-react';
 import { React, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 import CartComp from './CartComp';
+import { useOutletContext } from 'react-router';
 
-const Navbar = () => {
+const Navbar = ({totalItemsCount}) => {
     const [burgerOn, setBurgerOn] = useState(false);
+    
     
     const location = useLocation();
     const path = location.pathname;
@@ -27,7 +29,7 @@ const Navbar = () => {
                         <div className={`${active === 'shop' ? 'w-full' : 'w-0'} w-0 group-hover:w-full h-[0.1rem] bg-[#FFFBF4] duration-100`}></div>
                     </li>
                     <li className='group'>
-                        <Link to='cart'> <CartComp/> </Link>
+                        <Link to='cart'> <CartComp num={totalItemsCount}/></Link>
                         <div className={`${active === 'cart' ? 'w-full' : 'w-0'} w-0 group-hover:w-full h-[0.1rem] bg-[#FFFBF4] duration-100`}></div>
                     </li>
                 </ul>
@@ -55,7 +57,7 @@ const Navbar = () => {
                             <div className='w-0 group-hover:w-full h-[0.1rem] bg-white duration-100'></div>
                         </li>
                         <li onClick={() => setBurgerOn(false)} className='group py-2 text-2xl font-semibold'>
-                            <Link to='cart'> <CartComp/>  </Link>
+                            <Link to='cart'> <CartComp num={totalItemsCount}/>  </Link>
                             <div className='w-0 group-hover:w-full h-[0.1rem] bg-white duration-100'></div>
                         </li>
                     </ul>
